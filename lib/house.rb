@@ -10,10 +10,28 @@ class House
   end
 
   def price
-    @price.to_s.gsub(/[$,]/,'').to_i
+    @price.to_s.gsub(/[$]/,'').to_i
   end
 
   def add_room(room)
     @rooms << room
   end
-end
+
+  def above_market_average
+    if self.price > 500000
+      true
+    else
+      false
+    end
+  end
+
+  def rooms_from_category(category)
+    @rooms[category].category
+    end
+  end
+
+  def area
+    @rooms.map do |room|
+      room.area
+    end
+  end
