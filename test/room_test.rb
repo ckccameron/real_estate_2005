@@ -17,9 +17,11 @@ class RoomTest < Minitest::Test
   end
 
   def test_it_can_get_area
-    room = Room.new(:bedroom, 10, '13')
+    room_1 = Room.new(:bedroom, 10, '13')
+    room_2 = Room.new(:bedroom, 15, '12')
 
-    assert_equal 130, room.area
+    assert_equal 130, room_1.area
+    assert_equal 180, room_2.area
   end
 
   def test_room_can_be_painted
